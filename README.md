@@ -1,22 +1,15 @@
-# SRG-Halbierungsinitiative – Interaktive Lerneinheit (V3)
+# SRG-Halbierungsinitiative – Interaktive Lerneinheit (V4)
 
-**Features (ARBEITSMODUS-konform):**
-- Hintergrund-GIF halbtransparent (assets/images/tagesschau_trailer.gif)
-- 6 Levels mit anspruchsvollen Aufgaben:
-  - MC Single/Multi (automatisch korrigiert + XP)
-  - Offene Aufgaben mit Mindestlänge (argumentationsbasiert)
-- Republik-Ressourcen integriert:
-  - 2x MP3 Audio in `assets/audio/`
-  - 2x PDF in `assets/docs/`
-- Gamified System: XP, Level-Freischaltung, Auszeichnung
-- Pflicht-PDF-Export: erzeugt PDF mit **allen Antworten** + Name/Klasse/Datum/Score
-  - Datei wird lokal heruntergeladen und kann in Teams abgegeben werden.
+ÄNDERUNGSPROTOKOLL V4 (gegenüber V3):
+1) Republik-Audios **nicht mehr lokal im Repo**, sondern als externe Dropbox-Streams eingebunden (GitHub-tauglich).
+2) Ordner `assets/audio/` **entfernt**.
+3) Alle anderen Features aus V3 bleiben unverändert (Levels, MC, XP, Badge, Pflicht-PDF-Export).
+
+## Externe Audio-Quellen (im HTML eingebunden)
+- https://www.dropbox.com/scl/fi/yjiggvzfv13q3ains5vw6/republik_sondersession_audio.mp3?rlkey=uv2qs4aqwqqg4tbj75n1w0n3e&dl=1
+- https://www.dropbox.com/scl/fi/s2ldy2ezygzthbaiext1g/republik_podcast_sondersession.mp3?rlkey=u8naseqw0qmpzfmiwjoxrw54m&dl=1
 
 ## GitHub Pages
 1. Repo erstellen, Inhalte hochladen (Root enthält index.html)
 2. Settings → Pages → Branch `main` + Folder `/ (root)`
 3. Öffnen: https://<username>.github.io/<repo>/
-
-## Hinweise
-- Dropbox-Videos nutzen `dl=1` für direktes Streaming.
-- Antworten werden im Browser in localStorage gespeichert.
