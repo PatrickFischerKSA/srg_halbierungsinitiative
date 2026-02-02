@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>SRG Halbierungsinitiative – Lerneinheit</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<img id="bg-gif" src="assets/images/tagesschau_trailer.gif" alt="Hintergrund">
+
+<div class="container">
+  <h1>SRG-Halbierungsinitiative – Interaktive Lerneinheit</h1>
+
+  <h2>1) Was steht zur Abstimmung?</h2>
+  <video width="100%" controls>
+    <source src="https://www.dropbox.com/scl/fi/2hawhbavuc58v6h3sngqd/SRG-Initiative.mp4?rlkey=aur9zzd54soufm1je9mdtican&dl=1" type="video/mp4">
+  </video>
+
+  <h3>Aufgabe 1</h3>
+  <p>Auf wie viel Franken soll die Haushaltsabgabe maximal gesenkt werden?</p>
+  <input id="q1" type="text" placeholder="Zahl eingeben">
+  <button onclick="checkAnswer('q1','200')">Prüfen</button>
+  <div id="q1-fb"></div>
+
+  <h3>Aufgabe 2</h3>
+  <p>Wie viel beträgt die Abgabe heute?</p>
+  <input id="q2" type="text" placeholder="Zahl eingeben">
+  <button onclick="checkAnswer('q2','335')">Prüfen</button>
+  <div id="q2-fb"></div>
+
+  <h2>Fortschritt</h2>
+  <div class="progress-bar">Dein Fortschritt: <span id="progress">0%</span></div>
+
+  <p><a href="export.html">➡️ Zur PDF-Abgabe</a></p>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>PDF Export</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Antworten als PDF exportieren</h1>
+  <button onclick="generatePDF()">PDF erstellen</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+async function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.text("Lerneinheit SRG-Halbierungsinitiative", 10, 10);
+  doc.text("Antworten der Schülerin / des Schülers:", 10, 20);
+  doc.text("- Haushaltsabgabe heute: 335 CHF", 10, 30);
+  doc.text("- Haushaltsabgabe Initiative: 200 CHF", 10, 40);
+  doc.text("- Unternehmen zahlen gemäss Initiative: 0%", 10, 50);
+
+  doc.save("srg_lerneinheit_export.pdf");
+}
+</script>
+</body>
+</html>
