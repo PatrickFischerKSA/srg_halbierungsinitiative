@@ -1,3 +1,10 @@
+/* ===============================
+   ÄNDERUNGSPROTOKOLL V2
+   - Glas-Overlay vereinheitlicht
+   - GIF als halbtransparentes Vollbild
+   - Klare Struktur für Aufgabenblöcke
+   =============================== */
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -5,7 +12,6 @@ body {
   color: white;
 }
 
-/* Vollbild-GIF als halbtransparenter Hintergrund */
 #bg-gif {
   position: fixed;
   top: 0;
@@ -18,18 +24,47 @@ body {
   pointer-events: none;
 }
 
-/* Glas-Overlay für Inhalte */
 .container {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 40px;
   backdrop-filter: blur(8px);
-  background: rgba(10, 15, 25, 0.75);
+  background: rgba(10, 15, 25, 0.78);
   border-radius: 16px;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.question {
+  margin: 20px 0;
+  padding: 15px;
+  border-left: 4px solid #4fc3f7;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+}
+
+.feedback {
+  margin-top: 8px;
+  font-size: 0.9rem;
 }
 
 .progress-bar {
   margin-top: 20px;
   font-weight: bold;
+}
+
+.video-wrapper {
+  margin: 20px 0;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+}
+
+button {
+  margin-top: 8px;
 }
