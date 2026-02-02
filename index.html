@@ -1,165 +1,192 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>SRG Halbierungsinitiative – Interaktive Lerneinheit</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SRG-Halbierungsinitiative – Interaktive Lerneinheit (V3)</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
+  <img id="bg-gif" src="assets/images/tagesschau_trailer.gif" alt="Hintergrund (Tagesschau Trailer)">
+  <div id="vignette"></div>
 
-<img id="bg-gif" src="assets/images/tagesschau_trailer.gif" alt="Hintergrund">
+  <div class="container">
 
-<div class="container">
+    <div class="hero">
+      <h1>SRG-Halbierungsinitiative – Interaktive Lerneinheit (V3)</h1>
+      <p class="sub">
+        Ziel: Du wirst so informiert, dass du die Abstimmung sachlich verstehst und Pro/Contra differenziert erklären kannst.
+        <br><strong>Wichtig:</strong> Am Schluss musst du ein <strong>PDF mit ALLEN Antworten</strong> exportieren und in Teams abgeben.
+      </p>
 
-<h1>SRG-Halbierungsinitiative – Interaktive Lerneinheit</h1>
-<p><strong>Arbeitsmodus erfüllt: vollständige Datei, keine Platzhalter.</strong></p>
+      <div class="grid">
+        <div class="card">
+          <h2>Ressourcen (Video, Audio, PDF)</h2>
+          <div class="small">
+            <strong>Videos (Dropbox, im Browser abspielbar):</strong><br>
+            1) SRG-Initiative (Einführung) ·
+            2) «Warum Zeki irrt» ·
+            3) SERAFE & Löhne ·
+            4) Badran: Weshalb es die SRG braucht ·
+            5) Bundesrat-Ansprache ·
+            6) BR Rösti zur Initiative
+          </div>
+          <hr class="sep"/>
+          <div class="small">
+            <strong>Republik-Audio (eingebunden):</strong>
+            <audio class="audio" controls src="assets/audio/republik_audio_01.mp3"></audio>
+            <audio class="audio" controls src="assets/audio/republik_podcast_sondersession.mp3"></audio>
+          </div>
+          <hr class="sep"/>
+          <div class="small">
+            <strong>PDFs (Downloads / Lesetexte):</strong><br>
+            <a class="btn secondary" href="assets/docs/republik_binswanger_2026-01-17.pdf" target="_blank" rel="noopener">Republik: Binswanger (17.01.2026)</a>
+            <a class="btn secondary" href="assets/docs/republik_sondersession_2026-01-13.pdf" target="_blank" rel="noopener">Republik: Sondersession (13.01.2026)</a>
+            <div style="height:10px;"></div>
+            <a class="btn secondary" href="assets/docs/faktenblatt_01_initiative_gegenprojekt.pdf" target="_blank" rel="noopener">BAKOM Faktenblatt 1</a>
+            <a class="btn secondary" href="assets/docs/faktenblatt_02_haushalt_unternehmen.pdf" target="_blank" rel="noopener">BAKOM Faktenblatt 2</a>
+            <a class="btn secondary" href="assets/docs/faktenblatt_03_produktionsstandorte.pdf" target="_blank" rel="noopener">BAKOM Faktenblatt 3</a>
+            <a class="btn secondary" href="assets/docs/faktenblatt_04_volkswirtschaft.pdf" target="_blank" rel="noopener">BAKOM Faktenblatt 4</a>
+            <a class="btn secondary" href="assets/docs/erlaeuterungen_maerz_2026_de.pdf" target="_blank" rel="noopener">Erläuterungen März 2026</a>
+          </div>
+        </div>
 
-<div class="section">
-<h2>1) Was steht zur Abstimmung? (Einführung)</h2>
-<div class="video-wrapper">
-<video width="100%" controls>
-<source src="https://www.dropbox.com/scl/fi/2hawhbavuc58v6h3sngqd/SRG-Initiative.mp4?rlkey=aur9zzd54soufm1je9mdtican&dl=1" type="video/mp4">
-</video>
-</div>
+        <div class="card">
+          <h2>Profil & Fortschritt</h2>
+          <div class="small">Trage deinen Namen ein. Ohne Name/Klasse ist der PDF-Export gesperrt.</div>
 
-<div class="question">
-<p><strong>Q1:</strong> Auf wie viel Franken soll die Haushaltsabgabe maximal gesenkt werden?</p>
-<input id="q1" type="text" placeholder="Zahl eingeben">
-<button onclick="checkAnswer('q1','200')">Prüfen</button>
-<div id="q1-fb" class="feedback"></div>
-</div>
+          <div style="margin-top:10px; display:grid; gap:10px;">
+            <div>
+              <div class="small">Name</div>
+              <input id="studentName" type="text" placeholder="Vorname Nachname">
+            </div>
+            <div>
+              <div class="small">Klasse/Kurs</div>
+              <input id="studentClass" type="text" placeholder="z.B. 5F / 6G / GK 12">
+            </div>
+          </div>
 
-<div class="question">
-<p><strong>Q2:</strong> Wie hoch ist die Abgabe heute?</p>
-<input id="q2" type="text" placeholder="Zahl eingeben">
-<button onclick="checkAnswer('q2','335')">Prüfen</button>
-<div id="q2-fb" class="feedback"></div>
-</div>
-</div>
+          <div class="kpis">
+            <div class="kpi">
+              <div class="label">XP</div>
+              <div class="value" id="kpiXp">0</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Level</div>
+              <div class="value" id="kpiLevel">1/6</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Auszeichnung</div>
+              <div class="value" id="kpiBadge">Gesperrt</div>
+            </div>
+            <div class="kpi">
+              <div class="label">PDF exportiert?</div>
+              <div class="value" id="kpiExport">Nein</div>
+            </div>
+          </div>
 
-<div class="section">
-<h2>2) Gegenprojekt des Bundesrats</h2>
-<div class="video-wrapper">
-<video width="100%" controls>
-<source src="https://www.dropbox.com/scl/fi/lzldnli2gvyf4srwdjju0/SRG-Initiative-Volksabstimmung-vom-8.3.2026-Ansprache-des-Bundesrates.mp4?rlkey=6eumxvu5s2mqvqfxpaxlxxn5g&dl=1" type="video/mp4">
-</video>
-</div>
+          <div class="btnrow">
+            <button class="secondary danger" onclick="resetAll()">Alles zurücksetzen</button>
+          </div>
 
-<div class="question">
-<p><strong>Q3:</strong> Auf wie viel Franken senkt der Bundesrat die Abgabe bis 2029?</p>
-<input id="q3" type="text">
-<button onclick="checkAnswer('q3','300')">Prüfen</button>
-<div id="q3-fb" class="feedback"></div>
-</div>
+          <hr class="sep"/>
 
-<div class="question">
-<p><strong>Q4:</strong> Wie viel Prozent des SRG-Budgets soll bis 2029 eingespart werden?</p>
-<input id="q4" type="text">
-<button onclick="checkAnswer('q4','17')">Prüfen</button>
-<div id="q4-fb" class="feedback"></div>
-</div>
+          <div class="small">
+            Gesamtfortschritt: <strong id="globalProgress">0%</strong> · Aufgaben: <strong id="globalTasks">0/0</strong>
+          </div>
+        </div>
+      </div>
 
-<div class="question">
-<p><strong>Q5:</strong> Wie viele Vollzeitstellen sollen bei der SRG wegfallen?</p>
-<input id="q5" type="text">
-<button onclick="checkAnswer('q5','900')">Prüfen</button>
-<div id="q5-fb" class="feedback"></div>
-</div>
-</div>
+      <div class="card" style="margin-top:18px;">
+        <h2>Level-Map</h2>
+        <div class="small">Du kannst Level erst öffnen, wenn das vorherige vollständig abgeschlossen ist.</div>
+        <div id="levelMap" class="levelmap"></div>
+      </div>
 
-<div class="section">
-<h2>3) Unternehmen & SERAFE</h2>
-<div class="video-wrapper">
-<video width="100%" controls>
-<source src="https://www.dropbox.com/scl/fi/o7imcevop5kvw3cva7j7s/Halbierungsinitative-Ein-Blick-auf-die-SERAFE-L-hne-bei-der-SRG.mp4?rlkey=qp8eu8r7u42uoozjinmllgmgn&dl=1" type="video/mp4">
-</video>
-</div>
+      <div class="card" style="margin-top:18px;">
+        <h2 id="levelTitle">Level</h2>
+        <div class="small" id="levelDesc"></div>
 
-<div class="question">
-<p><strong>Q6:</strong> Ab welchem Umsatz zahlen Unternehmen heute eine Abgabe? (in CHF)</p>
-<input id="q6" type="text">
-<button onclick="checkAnswer('q6','500000')">Prüfen</button>
-<div id="q6-fb" class="feedback"></div>
-</div>
+        <div class="btnrow">
+          <button id="btnPrev" onclick="prevLevel()">Vorheriges Level</button>
+          <button id="btnNext" onclick="nextLevel()">Nächstes Level</button>
+        </div>
 
-<div class="question">
-<p><strong>Q7:</strong> Ab welchem Umsatz zahlen Unternehmen gemäss Gegenprojekt ab 2027? (in CHF)</p>
-<input id="q7" type="text">
-<button onclick="checkAnswer('q7','1200000')">Prüfen</button>
-<div id="q7-fb" class="feedback"></div>
-</div>
+        <hr class="sep"/>
 
-<div class="question">
-<p><strong>Q8 (offen):</strong> Ist es gerecht, dass Unternehmen zahlen? Begründe in 3–5 Sätzen.</p>
-<textarea id="q8" onchange="saveAnswer('q8',this.value)"></textarea>
-</div>
-</div>
+        <div class="small"><strong>Video-Dossier (für Level 3):</strong> Schau die Clips in folgender Reihenfolge.</div>
+        <div class="embed" style="margin-top:10px; padding:10px;">
+          <div class="small" style="margin-bottom:8px;">Clip 1: SRG-Initiative (Einführung)</div>
+          <video class="video" controls>
+            <source src="https://www.dropbox.com/scl/fi/2hawhbavuc58v6h3sngqd/SRG-Initiative.mp4?rlkey=aur9zzd54soufm1je9mdtican&dl=1" type="video/mp4">
+          </video>
 
-<div class="section">
-<h2>4) Demokratie & Service Public</h2>
-<div class="video-wrapper">
-<video width="100%" controls>
-<source src="https://www.dropbox.com/scl/fi/tpvtp5gv8nwsqkn9xdl7j/Badran-fadegrad-Weshalb-es-die-SRG-braucht.mp4?rlkey=8iw2ptqpzty7yk2l0k91fmn5x&dl=1" type="video/mp4">
-</video>
-</div>
+          <div class="small" style="margin:12px 0 8px;">Clip 2: SRG-Initiative – Warum Zeki irrt</div>
+          <video class="video" controls>
+            <source src="https://www.dropbox.com/scl/fi/iwh8ikqdbt8mhc3192b4d/SRG-Initiative-Warum-Zeki-irrt..mp4?rlkey=i22nzqxqep69wyz84p3xap5t1&dl=1" type="video/mp4">
+          </video>
 
-<div class="question">
-<p><strong>Q9:</strong> Nenne zwei Aufgaben des Service Public.</p>
-<textarea id="q9" onchange="saveAnswer('q9',this.value)"></textarea>
-</div>
+          <div class="small" style="margin:12px 0 8px;">Clip 3: SERAFE & Löhne bei der SRG</div>
+          <video class="video" controls>
+            <source src="https://www.dropbox.com/scl/fi/o7imcevop5kvw3cva7j7s/Halbierungsinitative-Ein-Blick-auf-die-SERAFE-L-hne-bei-der-SRG.mp4?rlkey=qp8eu8r7u42uoozjinmllgmgn&dl=1" type="video/mp4">
+          </video>
 
-<div class="question">
-<p><strong>Q10:</strong> Warum wären Rand- und Sprachregionen besonders betroffen?</p>
-<textarea id="q10" onchange="saveAnswer('q10',this.value)"></textarea>
-</div>
-</div>
+          <div class="small" style="margin:12px 0 8px;">Clip 4: Badran – Weshalb es die SRG braucht</div>
+          <video class="video" controls>
+            <source src="https://www.dropbox.com/scl/fi/tpvtp5gv8nwsqkn9xdl7j/Badran-fadegrad-Weshalb-es-die-SRG-braucht.mp4?rlkey=8iw2ptqpzty7yk2l0k91fmn5x&dl=1" type="video/mp4">
+          </video>
 
-<div class="section">
-<h2>5) Volkswirtschaftliche Folgen</h2>
+          <div class="small" style="margin:12px 0 8px;">Clip 5: Ansprache des Bundesrates</div>
+          <video class="video" controls>
+            <source src="https://www.dropbox.com/scl/fi/lzldnli2gvyf4srwdjju0/SRG-Initiative-Volksabstimmung-vom-8.3.2026-Ansprache-des-Bundesrates.mp4?rlkey=6eumxvu5s2mqvqfxpaxlxxn5g&dl=1" type="video/mp4">
+          </video>
 
-<div class="question">
-<p><strong>Q11:</strong> Wie viele Arbeitsplätze würden bei der SRG wegfallen?</p>
-<input id="q11" type="text">
-<button onclick="checkAnswer('q11','3000')">Prüfen</button>
-<div id="q11-fb" class="feedback"></div>
-</div>
+          <div class="small" style="margin:12px 0 8px;">Clip 6: BR Rösti zur Abstimmung</div>
+          <video class="video" controls>
+            <source src="https://www.dropbox.com/scl/fi/v3rdm25hgp9p15skolle5/Volksabstimmung-vom-8.3.2026-BR-R-sti-zu-Abstimmung-ber-die-Volksinitiative-SRG-Initiative.mp4?rlkey=e5od3moabumovu4ne9rea44l1&dl=1" type="video/mp4">
+          </video>
+        </div>
 
-<div class="question">
-<p><strong>Q12:</strong> Wie viele Arbeitsplätze wären indirekt betroffen?</p>
-<input id="q12" type="text">
-<button onclick="checkAnswer('q12','3200')">Prüfen</button>
-<div id="q12-fb" class="feedback"></div>
-</div>
+        <hr class="sep"/>
 
-<div class="question">
-<p><strong>Q13:</strong> Um wie viel würde die Brutto-Wertschöpfung der SRG sinken? (in Mio CHF)</p>
-<input id="q13" type="text">
-<button onclick="checkAnswer('q13','400')">Prüfen</button>
-<div id="q13-fb" class="feedback"></div>
-</div>
-</div>
+        <!-- Levels injected here -->
+        <div id="levelsHost"></div>
+      </div>
 
-<div class="section">
-<h2>6) Eigene Position</h2>
+      <div class="card" id="finalCard" style="margin-top:18px;">
+        <h2>Abschluss: Auszeichnung & Pflicht-Abgabe</h2>
+        <div class="small">
+          <strong>Regel:</strong> Die Auszeichnung wird erst freigeschaltet, wenn
+          (1) alle Aufgaben erledigt sind, (2) Name & Klasse eingetragen sind und (3) du das PDF exportiert hast.
+          <br>Das PDF enthält <strong>alle Antworten</strong> und muss in Teams abgegeben werden.
+        </div>
 
-<div class="question">
-<p><strong>Q14:</strong> Nenne dein stärkstes Pro-Argument (mit Zahl).</p>
-<textarea id="q14" onchange="saveAnswer('q14',this.value)"></textarea>
-</div>
+        <div id="badgeBox"></div>
 
-<div class="question">
-<p><strong>Q15:</strong> Nenne dein stärkstes Contra-Argument (mit Zahl).</p>
-<textarea id="q15" onchange="saveAnswer('q15',this.value)"></textarea>
-</div>
-</div>
+        <div class="btnrow">
+          <button id="btnShowAnswers" class="secondary" onclick="showAllAnswers()">Alle Antworten anzeigen</button>
+          <button id="btnExportPdf" onclick="exportPdf()">PDF exportieren (Pflicht)</button>
+        </div>
 
-<h2>Fortschritt</h2>
-<div class="progress-bar">Dein Fortschritt: <span id="progress">0%</span></div>
+        <div id="answersPanel" style="display:none; margin-top:12px;">
+          <div class="small"><strong>Antworten (Preview):</strong></div>
+          <div id="answerDump" class="answerlist"></div>
+        </div>
 
-<p><a href="export.html">➡️ Zur PDF-Abgabe</a></p>
+        <div class="footer">
+          Tipp für die Abgabe: Benenne die Datei nicht um – sie wird automatisch als
+          <strong>SRG_Lerneinheit_Klasse_Name.pdf</strong> gespeichert.
+        </div>
+      </div>
 
-</div>
+      <div class="footer">
+        Datenschutz: Antworten werden nur lokal im Browser (localStorage) gespeichert – nicht hochgeladen.
+      </div>
+    </div>
 
-<script src="assets/js/app.js"></script>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
